@@ -1,0 +1,33 @@
+string longestCommonPrefix(vector<string>& strs) {
+    if (strs.empty()) return "";
+
+    sort(strs.begin(), strs.end());
+
+    string first = strs[0];
+    string last = strs[strs.size() - 1];
+
+    int i = 0;
+    while (i < first.length() && i < last.length() && first[i] == last[i]) {
+        i++;
+    }
+
+    return first.substr(0, i);
+}
+
+Time & Space Complexity
+
+Time: O(n log n + m)
+
+Sorting: O(n log n)
+
+Comparison: O(m) (length of shortest string)
+
+After sorting:
+
+The first and last strings are the most different
+
+Their common prefix = common prefix of the entire array
+
+So we only compare 2 strings, not all.
+
+Space: O(1) (in-place sort)
