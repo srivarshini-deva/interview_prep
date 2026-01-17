@@ -1,0 +1,22 @@
+Time & Space
+
+Time: O(n)
+
+Space: O(1) (26 lowercase letters)
+
+char firstNonRepeating(string s) {
+    int freq[26] = {0};
+
+    // Count frequency
+    for (char c : s) {
+        freq[c - 'a']++;
+    }
+
+    // Find first non-repeating
+    for (char c : s) {
+        if (freq[c - 'a'] == 1)
+            return c;
+    }
+
+    return '\0'; // if no non-repeating character
+}
