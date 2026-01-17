@@ -1,0 +1,29 @@
+Time & Space
+
+Time: O(n)
+
+Space: O(1)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s = "hello";
+    int left = 0, right = s.length() - 1;
+
+    while (left < right) {
+        swap(s[left], s[right]);
+        left++;
+        right--;
+    }
+
+    cout << s;
+    return 0;
+}
+
+
+Use STL reverse()
+    string s = "hello";
+    reverse(s.begin(), s.end());
+
+O(n), O(1)
