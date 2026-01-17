@@ -1,0 +1,24 @@
+string replaceSubstring(string input, string target, string replacement) {
+    string result = "";
+    int n = input.length();
+    int m = target.length();
+
+    for (int i = 0; i < n; ) {
+        // Check substring match
+        if (i + m <= n && input.substr(i, m) == target) {
+            result += replacement;
+            i += m; // move window by target length
+        } else {
+            result += input[i];
+            i++;
+        }
+    }
+    return result;
+}
+
+⏱ Time & Space Complexity
+
+Time: O(n × m)
+(n = input length, m = target length)
+
+Space: O(n) (new result string)
