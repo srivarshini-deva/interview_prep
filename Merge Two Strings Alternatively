@@ -1,0 +1,14 @@
+string mergeAlternately(string s1, string s2) {
+    string result = "";
+    int i = 0, j = 0;
+
+    while (i < s1.length() || j < s2.length()) {
+        if (i < s1.length())
+            result += s1[i++];
+        if (j < s2.length())
+            result += s2[j++];
+    }
+    return result;
+}
+
+O(N + M), O(1)
