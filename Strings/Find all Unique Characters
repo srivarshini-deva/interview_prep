@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s = "success";
+    int freq[26] = {0};
+
+    // Count frequency
+    for (char c : s) {
+        freq[c - 'a']++;
+    }
+
+    // Print unique characters
+    for (char c : s) {
+        if (freq[c - 'a'] == 1) {
+            cout << c << " ";
+        }
+    }
+
+    return 0;
+}
