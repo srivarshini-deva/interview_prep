@@ -1,0 +1,31 @@
+string removeDuplicates(string s) {
+    set<char> seen;
+    string result = "";
+
+    for (char c : s) {
+        if (seen.find(c) == seen.end()) {
+            result += c;
+            seen.insert(c);
+        }
+    }
+    return result;
+}
+
+Time & Space
+
+Time: O(n)
+
+Space: O(1) (26 lowercase letters)
+
+string removeDuplicates(string s) {
+    bool seen[26] = {false};
+    string result = "";
+
+    for (char c : s) {
+        if (!seen[c - 'a']) {
+            result += c;
+            seen[c - 'a'] = true;
+        }
+    }
+    return result;
+}
