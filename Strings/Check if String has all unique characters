@@ -1,0 +1,33 @@
+bool hasAllUnique(string s) {
+    set<char> st;
+
+    for (char c : s) {
+        if (st.find(c) != st.end())
+            return false;
+        st.insert(c);
+    }
+    return true;
+}
+
+Time & Space
+
+Time: O(n)
+
+Space: O(n)
+
+bool hasAllUnique(string s) {
+    int freq[26] = {0};
+
+    for (char c : s) {
+        if (freq[c - 'a'] > 0)
+            return false;
+        freq[c - 'a']++;
+    }
+    return true;
+}
+
+Time & Space
+
+Time: O(n)
+
+Space: O(1)
