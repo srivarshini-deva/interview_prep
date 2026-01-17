@@ -1,0 +1,32 @@
+string compressString(string s) {
+    int n = s.length();
+    string compressed = "";
+
+    for (int i = 0; i < n; i++) {
+        char current = s[i];
+        int count = 1;
+
+        // Count consecutive characters
+        while (i + 1 < n && s[i] == s[i + 1]) {
+            count++;
+            i++;
+        }
+
+        compressed += current;
+        if (count > 1) {
+            compressed += to_string(count);
+        }
+    }
+
+    // Return shorter string
+    return compressed.length() < s.length() ? compressed : s;
+}
+
+
+Example 1:
+Input: "aaabbc"
+Compression Steps:
+ 'a' repeats 3 times, "a3"
+ 'b' repeats 2 time , "b2"
+ 'c' repeats 1 time, "c"
+Output: "a3b2c
