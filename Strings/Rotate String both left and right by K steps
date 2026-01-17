@@ -1,0 +1,11 @@
+string leftRotate(string s, int k) {
+    int n = s.length();
+    k = k % n;
+    return s.substr(k) + s.substr(0, k);
+}
+
+string rightRotate(string s, int k) {
+    int n = s.length();
+    k = k % n;
+    return s.substr(n - k) + s.substr(0, n - k);
+}
