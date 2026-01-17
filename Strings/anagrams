@@ -7,3 +7,10 @@ bool isAnagram(string s1, string s2) {
 
     return s1 == s2;
 }
+
+
+Time & Space
+
+Time: O(n log n)
+
+Space: O(1)
