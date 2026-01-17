@@ -1,0 +1,24 @@
+string toCamelCase(string s) {
+    string result = "";
+    bool makeUpper = false;
+
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] == ' ') {
+            makeUpper = true;
+        } else {
+            if (makeUpper) {
+                result += toupper(s[i]);
+                makeUpper = false;
+            } else {
+                result += tolower(s[i]);
+            }
+        }
+    }
+    return result;
+}
+
+Time & Space
+
+Time: O(n)
+
+Space: O(1)
