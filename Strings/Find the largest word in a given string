@@ -1,0 +1,15 @@
+string largestWord(string s) {
+    string current = "", largest = "";
+
+    for (int i = 0; i <= s.length(); i++) {
+        if (i == s.length() || s[i] == ' ') {
+            if (current.length() > largest.length()) {
+                largest = current;
+            }
+            current = "";
+        } else {
+            current += s[i];
+        }
+    }
+    return largest;
+}
