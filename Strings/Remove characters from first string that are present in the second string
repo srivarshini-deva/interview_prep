@@ -1,0 +1,25 @@
+string removeChars(string s1, string s2) {
+    bool remove[26] = {false};
+
+    // Mark characters to remove
+    for (char c : s2) {
+        remove[c - 'a'] = true;
+    }
+
+    string result = "";
+
+    // Build result
+    for (char c : s1) {
+        if (!remove[c - 'a']) {
+            result += c;
+        }
+    }
+
+    return result;
+}
+
+Time & Space
+
+Time: O(n + m)
+
+Space: O(1) (26 lowercase letters)
